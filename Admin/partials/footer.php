@@ -1,0 +1,1 @@
+<?php echo date('Y'); ?> © Mansen SHS.| All Right Reserved.| Team: codethriveiconsult@gmail.com.
