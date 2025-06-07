@@ -17,6 +17,8 @@ if (isset($_POST['btnedit'])) {
     $email = $_POST['txtemail'];
     $role  = $_POST['cmdrole'];
     $phone = $_POST['txtphone'];
+    $address = $_POST['txtaddress'];
+
 
     // Check if email already exists for another user
     $checkEmail = $dbh->prepare("SELECT * FROM users WHERE email = :email AND id != :user_id");
@@ -27,11 +29,12 @@ if (isset($_POST['btnedit'])) {
     if ($checkEmail->rowCount() > 0) {
         $_SESSION['error']='The email address is already in use by another account. Please use a different one.';
     } else {
-        $stmt = $dbh->prepare("UPDATE users SET name = :name, email = :email, role = :role, phone = :phone WHERE id = :user_id");
+        $stmt = $dbh->prepare("UPDATE users SET name = :name, email = :email, role = :role, phone = :phone,address = :address WHERE id = :user_id");
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':role', $role);
         $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':address', $address);
         $stmt->bindParam(':user_id', $user_id);
 
         if ($stmt->execute()) {
@@ -225,6 +228,10 @@ if (isset($_POST['btneditphoto'])) {
             <div class="form-group">
               <label for="txtphone">Phone</label>
               <input type="tel" name="txtphone" class="form-control" id="txtphone" value="<?php echo htmlspecialchars($row_user['phone']); ?>" required>
+            </div>
+            <div class="form-group">
+              <label for="txtphone">Address</label>
+              <input type="text" name="txtaddress" class="form-control" id="txtphone" value="<?php echo htmlspecialchars($row_user['address']); ?>" required>
             </div>
           </div>
           <div class="modal-footer">

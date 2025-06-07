@@ -68,7 +68,7 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
      
       <li class="nav-item">
-        <a href="index" class="nav-link active">
+        <a href="index.php" class="nav-link active">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>Dashboard</p>
         </a>
@@ -83,27 +83,33 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="add_user" class="nav-link">
+            <a href="add_user.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>New User</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="user_record" class="nav-link">
+            <a href="user_record.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>User Record</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="change_password" class="nav-link">
+            <a href="change_password.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Change Password</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="profile" class="nav-link">
+            <a href="profile.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Profile</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="medical_history.php" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>Medical History</p>
             </a>
           </li>
         </ul>
